@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DROP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <img src="img/Logo.png" width="150px" height=auto>
+            </div>
+            <div id="right-nav">
+                <div id="search">
+                    <img src="img/search.png" width="30px" height=auto>
+                </div>
+                <div class="nav-items"><a href="#">Login</a></div>
+                <div class="nav-items"><a href="#">Shop</a></div>
+                <div class="nav-items"><a id="underline" href="#">Home</a></div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div id="slideshow">
+            <div id="content"></div>
+            <a class="prev" onclick="slide(-1)">&#10094;</a>
+            <a class="next" onclick="slide(1)">&#10095;</a>
+        </div>
+        <div class="title"><p>Shop All</p></div>
+        <hr>
+        <div id="button">
+            <button id="snkrs" class="category" onclick=showSnkrs()>SNEAKERS</button>
+            <button id="apprl" class="category" onclick=showApprl()>APPAREL</button>
+        </div>
+        <div id="flex-container1" class="flex-container">
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/MOcha.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Air Jordan 1 High Mocha</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/UNC_Fearless.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Air Jordan 1 High Fearless UNC</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/SmokeGreyLow.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Air Jordan 1 Low Smoke Grey</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/Zebra.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Yeezy Boost 350 V2 Zebra</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/UnionGuavaIce.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Union LA x Air Jordan 4 Guava Ice</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/Paranoise.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>G-Dragon Peaceminusone Nike Air Force 1 Low Para-Noise</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/paranoise_2.0.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Union LA x Air Jordan 4 Guava Ice</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/TS_Dunk.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Nike SB Dunk Low Travis Scott</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/BearDunk.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Union LA x Air Jordan 4 Guava Ice</p>
+                </a>
+            </div>
+        </div>
+        <div id="flex-container2" class="flex-container">
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/pants1.jpg" width="97px" height="250px">
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Yeezy Boost 700 V3 Safflower</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/OW1.jpg" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Union LA x Air Jordan 4 Guava Ice</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/Essentials4.jpg" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Union LA x Air Jordan 4 Guava Ice</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/OW2.jpg" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Union LA x Air Jordan 4 Guava Ice</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="#">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/OW4.jpg" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Union LA x Air Jordan 4 Guava Ice</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <img src="img/twitter.png" width="40px">
+    </footer>
+</body>
+</html>
+
