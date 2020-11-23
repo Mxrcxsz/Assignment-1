@@ -120,11 +120,15 @@ footer{
     background-color: burlywood;
 }
 
-#button{
+#cat-button{
     display: flex;
     justify-content: center;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+#cat-button button:hover{
+    cursor: pointer;
 }
 
 .category{
@@ -200,9 +204,81 @@ footer{
 
 footer{
     width: 100%;
-    height: 300px;
+    height: 500px;
     background-color: peachpuff;
     font-size: 20px;
     display: flex;
     justify-content: center;
+}
+
+#form_content{
+    width: 450px;
+    height: auto;
+    margin: 0 auto;
+    color: #EEE2DC;
+    /* background-color: yellow; */
+}
+input[type=email],select,textarea{
+    color: #45a29e;
+    width: 445px;
+    border: none;
+    border-radius: 3px;
+}
+input[type=email],textarea{
+    width: 445px;
+}
+select{
+    width: 450px;
+}
+input[type=email],select{
+    height: 28px;
+}
+textarea::placeholder {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button{
+    width: 450px;
+    height: 50px;
+    font-size: 20px;
+    background-color: #edc7b7;
+    color: #45a29e;
+    text-align: center;
+    border: none;
+}
+button:hover{
+    background-color: #bd9e90;
+    color: white;
+}
+#social{
+    width: 450px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-end ;
+}
+
+/*Responsive*/
+@media screen and (max-width: 500px) {
+    nav{
+        /* background-color: blue; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #logo{
+        width: 100%;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: center;
+        padding-left: 0px;
+    }
+    #right-nav{
+        width: 100%;
+        font-size: 19px;
+        padding-top: 15px;
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
 }
