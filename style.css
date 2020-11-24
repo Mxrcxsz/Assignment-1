@@ -195,6 +195,13 @@ footer{
     border: 1px solid black;
     border-radius: 5px;
     outline: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#snkrs img, #apprl img{
+    display: none;
 }
 
 #flex-container2 .flex-items-container{
@@ -205,28 +212,62 @@ footer{
 footer{
     width: 100%;
     height: 500px;
-    background-color: peachpuff;
-    font-size: 20px;
+    margin-top: 20px;
+    border: 1px solid white;
+    background-color: black;
+}
+
+.header{
+    width: 100%;
+    height: 30px;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
     display: flex;
     justify-content: center;
+    text-shadow: 1px 1px 2px #9c9598;
 }
 
 #form_content{
     width: 450px;
     height: auto;
     margin: 0 auto;
-    color: #EEE2DC;
+    color: white;
     /* background-color: yellow; */
 }
 input[type=email],select,textarea{
-    color: #45a29e;
-    width: 445px;
+    color: white;
     border: none;
     border-radius: 3px;
 }
 input[type=email],textarea{
     width: 445px;
 }
+input[type=email],select,textarea{
+    border: 1px solid white;
+    background: transparent;
+    border-radius: 0px;
+}
+select{
+    color: rgb(221, 221, 221);
+}
+
+textarea:focus, input:focus, select{
+    outline: none;
+}
+
+::placeholder{
+    color: rgb(221, 221, 221);
+}
+
+:-ms-input-placeholder {
+    color: rgb(221, 221, 221);
+}
+  
+::-ms-input-placeholder {
+color: rgb(221, 221, 221);
+}
+
 select{
     width: 450px;
 }
@@ -240,13 +281,14 @@ button{
     width: 450px;
     height: 50px;
     font-size: 20px;
-    background-color: #edc7b7;
-    color: #45a29e;
+    background-color: white;
+    color: #445554;
     text-align: center;
     border: none;
 }
 button:hover{
-    background-color: #bd9e90;
+    background-color: black;
+    border: 1px solid white;
     color: white;
 }
 #social{
@@ -280,5 +322,28 @@ button:hover{
         padding-top: 15px;
         display: flex;
         flex-wrap: wrap-reverse;
+    }
+    #form_content{
+        width: 80%;
+    }
+    input[type=email],textarea,textarea{
+        width: 98%;
+    }
+    select{
+        width: 100%;
+    }
+    button{
+        width: 100%;
+    }
+    .category{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 350px) {
+    #snkrs label, #apprl label{
+        display: none;
+    }
+    #snkrs img, #apprl img{
+        display: block;
     }
 }
