@@ -58,7 +58,7 @@ function showSnkrs(){
 }
 
 //display product 
-function showProduct(title,img){
-    let product = [title,img];
+function showProduct(title,img,price){
+    let product = [title,img,price];
     sessionStorage.setItem("product",JSON.stringify(product));
 }

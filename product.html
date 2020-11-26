@@ -25,15 +25,14 @@
     <section id="product-section">
         <div id="product">
             <div id="scroll">
-                
             </div>
             <div id="pic">
             </div>
         </div>
         <div id="desc">
             <div class="title"><p id="product-title"></p></div>
-            <div id="price">
-                <p>$239</p>
+            <div id="price-container">
+                <p id="price"></p>
                 <hr>
             </div>
             <div id="size">
@@ -74,9 +73,11 @@
         </div>
     </section>
     <script>
-        var a = document.getElementById("product-title");;
         let product = JSON.parse(sessionStorage.getItem('product'))
+        var a = document.getElementById("product-title");;
         a.innerHTML = product[0];
+        var b = document.getElementById("price");;
+        b.innerHTML = product[2];
     </script>
     <footer>
         <form>

@@ -36,9 +36,9 @@
     text-align: center;
 }
 
-#price{
+#price-container{
     font-size: 30px;
-    transform: translate(0%, -60px);
+    transform: translate(0%, -40px);
     text-align: center;
 }
 
@@ -52,6 +52,7 @@ hr{
 
 #size{
     transform: translate(0%, -60px);
+    padding-top: 1px;
     padding-left: 11%;
     font-size: 20px;
     height: 30px;
