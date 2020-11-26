@@ -1,3 +1,4 @@
+//For index
 current = 2;
 var slides = ["url(img/content1.jpg)", "url(img/content2.jpg)","url(img/content3.jpg)","url(img/content4.jpg)"];
 document.getElementById("content").style.backgroundImage = slides[current];
@@ -8,9 +9,9 @@ var zc = document.getElementById("apprl");
 var ys = document.getElementById("s-icon");
 var zs = document.getElementById("a-icon");
 var check = true
-
 z.style.display = "none";
 
+//slideshow
 function slide(n) {
     current += n;
     var x = document.getElementById("content");
@@ -24,6 +25,7 @@ function slide(n) {
     x.style.backgroundImage = slides[current];
 }
 
+//show apparel
 function showApprl(){
     y.style.display = "none";
     z.style.display = "flex";
@@ -39,6 +41,7 @@ function showApprl(){
     }
 }
 
+//show sneaker
 function showSnkrs(){
     z.style.display = "none";
     y.style.display = "flex";
@@ -53,3 +56,8 @@ function showSnkrs(){
         check = true;
     }
 }
+
+//For product
+// var productImg = ["url(img/content1.jpg)", "url(img/content2.jpg)","url(img/content3.jpg)","url(img/content4.jpg)"];
+
+//display product 
