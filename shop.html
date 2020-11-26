@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DROP</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <img src="img/Logo.png" width="150px" height=auto>
+            </div>
+            <div id="right-nav">
+                <div id="search">
+                    <img src="img/search.png" width="30px" height=auto>
+                </div>
+                <div class="nav-items"><a href="#nav">Login</a></div>
+                <div class="nav-items"><a href="#nav">Shop</a></div>
+                <div class="nav-items"><a id="underline" href="#nav">Home</a></div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div id="slideshow">
+            <div id="content"></div>
+            <a class="prev" onclick="slide(-1)">&#10094;</a>
+            <a class="next" onclick="slide(1)">&#10095;</a>
+        </div>
+        <div class="title"><p>Shop All</p></div>
+        <hr>
+        <div id="cat-button">
+            <button id="snkrs" class="category" onclick=showSnkrs()>
+                <label>SNEAKERS</label>
+                <img id="s-icon" src="img/sneakers.png" style="padding-top: 7px;" width=35px>
+            </button>
+            <button id="apprl" class="category" onclick=showApprl()>
+                <label>APPAREL</label>
+                <img id="a-icon" src="img/shirt (1).png" width=29px>
+            </button>
+        </div>
+        <div id="flex-container1" class="flex-container">
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Air Jordan 1 Retro High Mocha','img/MOcha.png')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/MOcha.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Air Jordan 1 High Mocha</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Air Jordan 1 Retro High Fearless UNC','img/UNC_Fearless.png')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/UNC_Fearless.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Air Jordan 1 High Fearless UNC</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Air Jordan 1 Retro Low Smoke Grey','img/SmokeGreyLow.png')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/SmokeGreyLow.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Air Jordan 1 Low Smoke Grey</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Yeezy Boost 350 V2 Zebra','img/Zebra.png')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/Zebra.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Yeezy Boost 350 V2 Zebra</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Union LA x Air Jordan 4 Guava Ice','img/UnionGuavaIce.png')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/UnionGuavaIce.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Union LA x Air Jordan 4 Guava Ice</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('G-Dragon Peaceminusone Nike Air Force 1 Low Para-Noise','img/Paranoise.png')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/Paranoise.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>G-Dragon Peaceminusone Nike Air Force 1 Low Para-Noise</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('G-Dragon Peaceminusone Nike Air Force 1 Low Para-Noise 2.0','img/paranoise_2.0.png')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/paranoise_2.0.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>G-Dragon Peaceminusone Nike Air Force 1 Low Para-Noise 2.0</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Nike SB Dunk Low Travis Scott','img/TS_Dunk.png')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/TS_Dunk.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Nike SB Dunk Low Travis Scott</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Nike SB Dunk Low Travis Scott','img/TS_Dunk.png')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/BearDunk.png" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Grateful Dead x Nike SB Dunk Low Opti Yellow</p>
+                </a>
+            </div>
+        </div>
+        <div id="flex-container2" class="flex-container">
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Off White Denim Jeans','img/pants1.jpg')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/pants1.jpg" width="97px" height="250px">
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Off White Denim Jeans</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Off White Long Sleeve Shirt White','img/OW1.jpg')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/OW1.jpg" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Off White Long Sleeve Shirt White</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html" onclick="showProduct('Essentials Cream Hoodie','img/Essentials4.jpg')">
+                    <div class="flex-items-container">
+                        <div class="imgContainer">
+                            <img src="img/Essentials4.jpg" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Essentials Cream Hoodie</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html">
+                    <div class="flex-items-container" onclick="showProduct('Off White Long Sleeve Shirt Black','img/OW2.jpg')">
+                        <div class="imgContainer">
+                            <img src="img/OW2.jpg" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Off White Long Sleeve Shirt Black</p>
+                </a>
+            </div>
+            <div class="flex-items">
+                <a href="product.html">
+                    <div class="flex-items-container" onclick="showProduct('Off White Nike T-shirt &quot;Logo&quot;','img/OW4.jpg')">
+                        <div class="imgContainer">
+                            <img src="img/OW4.jpg" width=100%>
+                        </div>
+                        <article>
+                            <div class="description"></div>
+                        </article>
+                    </div>
+                    <p>Off White Nike T-shirt "Logo"</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <form>
+            <p class="header">Contact Us</p>
+            <div id="form_content">
+                <label for="uname"><b>Email</b></label><br>
+                <input type="email" size=55 placeholder="Enter Email" name="email" required><br><br>
+                <label for="topic"><b>Topic</b></label><br>
+                <select id="topic" name="topic">
+                    <option value="general">General</option>
+                    <option value="school">School</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+            
+                <label for="message">Message</label><br>
+                <textarea id="message" style="resize: none;" rows="3" cols="50" placeholder="Enter Message"></textarea>
+                <br><br>
+                <button id="submit" type="submit">Submit Request</button><br>
+                <br>
+            </div>
+        </form>
+        <div id="social">
+            <a href="social"><img src="img/facebook.png" width=50px></a>
+            <a href="#social"><img src="img/instagram.png" width=50px></a>
+            <a href="#social"><img src="img/twitter.png" width=50px></a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script defer src="script.js"></script>
