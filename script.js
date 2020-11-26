@@ -57,7 +57,8 @@ function showSnkrs(){
     }
 }
 
-//For product
-// var productImg = ["url(img/content1.jpg)", "url(img/content2.jpg)","url(img/content3.jpg)","url(img/content4.jpg)"];
-
 //display product 
+function showProduct(title,img){
+    let product = [title,img];
+    sessionStorage.setItem("product",JSON.stringify(product));
+}

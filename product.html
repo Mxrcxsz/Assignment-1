@@ -3,6 +3,7 @@
 <head>
     <title>DROP</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,9 +22,36 @@
             </div>
         </nav>
     </header>
-    <section>
-        
+    <section id="product-section">
+        <div id="product">
+            <div id="scroll">
+                
+            </div>
+            <div id="pic">
+            </div>
+        </div>
+        <div id="desc">
+            <div class="title"><p id="product-title"></p></div>
+            <div id="price">
+                <p>$239</p>
+                <hr>
+            </div>
+            <div style="background-color:darkgoldenrod;height: 100px;">
+
+            </div>
+            <!-- <article>The upper of the Jordan 1 High Dark Mocha features a Sail leather base with black leather 
+                surrounding the toe box and Mocha suede on the heel and ankle. A black leather Swoosh, 
+                Jordan Wings logo on the ankle, and Nike Air branding on the tongue pays homage to branding 
+                that can be found on the original 1985 Jordan 1. A Sail midsole and black outsole complete 
+                this Black Toe design.
+            </article> -->
+        </div>
     </section>
+    <script>
+        var a = document.getElementById("product-title");;
+        let product = JSON.parse(sessionStorage.getItem('product'))
+        a.innerHTML = product[0];
+    </script>
     <footer>
         <form>
             <p class="header">Contact Us</p>
