@@ -9,7 +9,7 @@
     <header>
         <nav>
             <div id="logo">
-                <img src="img/Logo.png" width="150px" height=auto>
+                <a href="index.html"><img src="img/Logo.png" width="150px" height=auto></a>
             </div>
             <div id="right-nav">
                 <div id="search">
@@ -21,11 +21,52 @@
             </div>
         </nav>
     </header>
-    <section style="height:500px;background-color: blanchedalmond;">
+    <section>
         <div id="poster">
-            <div id="wallpaper"></div>
+            <a href="shop.html" id="wallpaper"></a>
+            <a href="shop.html" id="alt-text">Latest SS21 Collection</a>
+        </div>
+        <div id="mid">
+            <div class="title"><p>Shop Brands</p></div>
+            <div id="dynamic"></div>
+        </div>
+        <div id="ow">
+            <div class="title"><p>Off White™</p></div>
+            <div id="clothes">
+                <div id="ow-left">
+                    <img src="img/content_3.jpg" width=100% alt="content_3">
+                </div>
+                <div id="ow-right">
+                    <div id="ow-right-top">
+                        <img src="img/content_.jpg" width=100% alt="content_3">
+                    </div>
+                    <div id="ow-right-bot">
+                        <img src="img/content_3.jpg" width=100% alt="content_3">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+    <script>
+        //dynamic background
+        var cycle = 0; 
+        var allBackgrounds = [ "img/content_2.jpg",  
+                            "img/content_1.jpg",  
+                            "img/content_11.jpg",
+                            "img/content_10.png",
+                            "img/content_6.jpg",]; 
+        
+        setInterval(function() { 
+            if (cycle < 4) { 
+                cycle += 1; 
+                document.getElementById("dynamic").style.backgroundImage = "url('" + allBackgrounds[cycle] + "')"; 
+            } else {  
+                cycle = 0;  
+                document.getElementById("dynamic").style.backgroundImage = "url('" + allBackgrounds[cycle] + "')";
+                cycle += 1; 
+            }
+        }, 4000); 
+    </script>
     <footer>
         <form>
             <p class="header">Contact Us</p>
