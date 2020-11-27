@@ -24,9 +24,8 @@
     </header>
     <section id="product-section">
         <div id="product">
-            <div id="scroll">
-            </div>
             <div id="pic">
+                <img id="product-img" width=100%>
             </div>
         </div>
         <div id="desc">
@@ -70,20 +69,19 @@
                     US11.5
                 </div>
             </div>
-            <!-- <article>The upper of the Jordan 1 High Dark Mocha features a Sail leather base with black leather 
-                surrounding the toe box and Mocha suede on the heel and ankle. A black leather Swoosh, 
-                Jordan Wings logo on the ankle, and Nike Air branding on the tongue pays homage to branding 
-                that can be found on the original 1985 Jordan 1. A Sail midsole and black outsole complete 
-                this Black Toe design.
-            </article> -->
+            <div id="buy-btn">
+                <a id="buy">Buy now</a>
+            </div>
         </div>
     </section>
     <script>
         let product = JSON.parse(sessionStorage.getItem('product'))
-        var a = document.getElementById("product-title");;
-        a.innerHTML = product[0];
-        var b = document.getElementById("price");;
-        b.innerHTML = "$"+product[2];
+        var title = document.getElementById("product-title");;
+        title.innerHTML = product[0];
+        var img = document.getElementById("product-img");;
+        img.src = product[1];
+        var price = document.getElementById("price");;
+        price.innerHTML = "$"+product[2];
     </script>
     <footer>
         <form>

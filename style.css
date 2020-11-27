@@ -108,9 +108,10 @@ border-radius: 3px 0 0 3px;
 }
 
 hr {
+    width: 80%;
     border: none;
     height: 1px;
-    background-color: black; /* Modern Browsers */
+    background-color: black;
 }
 
 #cat-button{
@@ -308,12 +309,6 @@ button:hover{
     float: left;
 }
 
-#scroll{
-    width: 150px;
-    height: 450px;
-    background-color: blue;
-}
-
 #pic{
     width: 450px;
     height: 450px;
@@ -340,10 +335,6 @@ button:hover{
 
 article{
     text-align: center;
-}
-
-hr{
-    width: 80%;
 }
 
 #size{
@@ -373,7 +364,38 @@ hr{
     padding: 10px;
 }
 
+#buy-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buy{
+    width: 25%;
+    height: 50px;
+    border: 1px solid black;
+    background-color: white;
+    font-size: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /*Responsive*/
+@media screen and (max-width: 600px) {
+    #product{
+        width: 60%;
+    }
+    #desc{
+        width: 40%;
+    }
+    #desc .title{
+        font-size: 24px;
+    }
+    #price{
+        font-size: 18px;
+    }
+}
 @media screen and (max-width: 500px) {
     nav{
         /* background-color: blue; */
