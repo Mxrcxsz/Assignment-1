@@ -96,8 +96,8 @@ section{
   }
 
 .next {
-right: 0;
-border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 .title{
@@ -228,7 +228,6 @@ footer{
     height: auto;
     margin: 0 auto;
     color: white;
-    /* background-color: yellow; */
 }
 input[type=email],select,textarea{
     color: white;
@@ -297,29 +296,32 @@ button:hover{
 
 #product-section{
     width: 100%;
-    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
 }
 
 #product{
     width: 50%;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     padding-top: 80px;
     display: flex;
-    justify-content: flex-end;
-    float: left;
+    justify-content: center;
+    align-items: center;
 }
 
 #pic{
     width: 450px;
     height: 450px;
-    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #desc{
     width: 50%;
     height: 450px;
     padding-top: 80px;
-    float: left;
 }
 
 #desc .title{
@@ -345,13 +347,14 @@ article{
     height: 30px;
 }
 
-#size-box{
+#size-box, #size-box2{
     transform: translate(0%, -40px);
     margin-left: 11%;
     margin-right: 5%;
     display: flex;
     flex-wrap: wrap;
 }
+
 
 #product-section .flex-items{
     width: 50px;
@@ -362,27 +365,46 @@ article{
     justify-content: center;
     align-items: center;
     padding: 10px;
+    cursor: pointer;
 }
 
 #buy-btn{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: gray;
 }
 
 #buy{
     width: 25%;
     height: 50px;
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid gray;
+    text-align: center;
     font-size: 27px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.buy{
+    color: black;
+    background: linear-gradient(to left, white 50%, black 50%) right;
+    background-size: 200%;
+}
+
+.buy:hover{
+    cursor: pointer;
+    color: white;
+    background-position: left;
+    transition: .4s ease-out;
+}
+
+#product-section .flex-items:focus{
+    outline: none;
+}
+
 /*Responsive*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 950px) {
     #product{
         width: 60%;
     }
@@ -390,10 +412,48 @@ article{
         width: 40%;
     }
     #desc .title{
-        font-size: 24px;
+        font-size: 30px;
     }
     #price{
+        font-size: 20px;
+    }
+    #product-section .flex-items{
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+    #size{
         font-size: 18px;
+    }
+    #buy{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 700px) {
+    #product{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #desc{
+        width: 100%;
+    }
+    #desc .title{
+        font-size: 40px;
+    }
+    #price{
+        font-size: 30px;
+    }
+    #product-section .flex-items{
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+    #size{
+        font-size: 20px;
+    }
+    #buy{
+        font-size: 27px;
     }
 }
 @media screen and (max-width: 500px) {

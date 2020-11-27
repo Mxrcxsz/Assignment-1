@@ -38,35 +38,52 @@
                 <p>Choose Your Size</p>
             </div>
             <div id="size-box">
-                <div class="flex-items">
+                <div id="7" class="flex-items" onclick=activateBtn(this.id) tabindex="1">
                     US7
                 </div>
-                <div class="flex-items">
+                <div id="7.5" class="flex-items" onclick=activateBtn(this.id) tabindex="2">
                     US7.5
                 </div>
-                <div class="flex-items">
+                <div id="8" class="flex-items" onclick=activateBtn(this.id) tabindex="3">
                     US8
                 </div>
-                <div class="flex-items">
+                <div id="8.5" class="flex-items" onclick=activateBtn(this.id) tabindex="4">
                     US8.5
                 </div>
-                <div class="flex-items">
+                <div id="9" class="flex-items" onclick=activateBtn(this.id) tabindex="5">
                     US9
                 </div>
-                <div class="flex-items">
+                <div id="9.5" class="flex-items" onclick=activateBtn(this.id) tabindex="6">
                     US9.5
                 </div>
-                <div class="flex-items">
+                <div id="10" class="flex-items" onclick=activateBtn(this.id) tabindex="7">
                     US10
                 </div>
-                <div class="flex-items">
+                <div id="10.5" class="flex-items" onclick=activateBtn(this.id) tabindex="8">
                     US10.5
                 </div>
-                <div class="flex-items">
+                <div id="11" class="flex-items" onclick=activateBtn(this.id) tabindex="9">
                     US11
                 </div>
-                <div class="flex-items">
+                <div id="11.5" class="flex-items" onclick=activateBtn(this.id) tabindex="10">
                     US11.5
+                </div>
+            </div>
+            <div id="size-box2">
+                <div id="XS" class="flex-items" onclick=activateBtn(this.id) tabindex="1">
+                    XS
+                </div>
+                <div id="S" class="flex-items" onclick=activateBtn(this.id) tabindex="2">
+                    S
+                </div>
+                <div id="M" class="flex-items" onclick=activateBtn(this.id) tabindex="2">
+                    M
+                </div>
+                <div id="L" class="flex-items" onclick=activateBtn(this.id) tabindex="2">
+                    L
+                </div>
+                <div id="XL" class="flex-items" onclick=activateBtn(this.id) tabindex="2">
+                    XL
                 </div>
             </div>
             <div id="buy-btn">
@@ -75,6 +92,7 @@
         </div>
     </section>
     <script>
+        //Set title image and price
         let product = JSON.parse(sessionStorage.getItem('product'))
         var title = document.getElementById("product-title");;
         title.innerHTML = product[0];
@@ -82,6 +100,36 @@
         img.src = product[1];
         var price = document.getElementById("price");;
         price.innerHTML = "$"+product[2];
+        var sizeBox2 = document.getElementById("size-box2");
+        sizeBox2.style.display = "none";
+
+        //activate buynow button
+        function activateBtn(id){
+            var sizeBox = document.getElementById(id);
+            var sizeBoxes = document.getElementsByClassName("flex-items");
+            var buyBtn = document.getElementById("buy");
+            for(var i = 0; i < sizeBoxes.length; i++){
+                sizeBoxes[i].style.color = "grey";
+                sizeBoxes[i].style.border = "1px solid grey";
+                sizeBoxes[i].style.backgroundColor = "white";
+            }
+            sizeBox.style.backgroundColor = "black";
+            sizeBox.style.color = "white";
+            sizeBox.style.border = "1px solid black";
+            buyBtn.classList.add("buy");
+        }
+        var apprls = ['img/pants1.jpg','img/OW1.jpg','img/Essentials4.jpg','img/OW2.jpg','img/OW4.jpg'];
+        for(var i = 0; i < apprls.length; i++){
+            if (apprls[i] == product[1]){
+                if (apprls[i] == 'img/pants1.jpg')
+                {
+                    img.width = 250;
+                    img.height = 450;
+                }
+                document.getElementById("size-box").style.display = "none";
+                sizeBox2.style.display = "flex"
+            }
+        }
     </script>
     <footer>
         <form>

@@ -1,6 +1,7 @@
 //For index
-current = 2;
+var current = 2;
 var slides = ["url(img/content1.jpg)", "url(img/content2.jpg)","url(img/content3.jpg)","url(img/content4.jpg)"];
+var apprls = ['img/pants1.jpg','img/OW1.jpg','img/Essentials4.jpg','img/OW2.jpg','img/OW4.jpg'];
 document.getElementById("content").style.backgroundImage = slides[current];
 var y = document.getElementById("flex-container1");
 var z = document.getElementById("flex-container2");
