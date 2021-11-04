@@ -1,110 +1,139 @@
-{
-  "Recipe" : {
-    "001" : {
+[
+    {
+      "recipeId" : "001",
+      "name" : "Miso Ramen",
       "img" : "https://mxrcxsz.github.io/Assignment-1/img/miso_ramen.jpeg",
       "description" : "Homemade Japanese Ramen, which is a Japanese Noodle Soup, with a combination of a rich flavoured broth, one of a variety of types of noodle and selections of meats, often topped with a boiled egg.",
-      "ingredientList" : [ {
-        "name" : "Miso",
-        "quantity" : "1 tablespoon"
-      }, {
-        "name" : "Chili Bean Paste",
-        "quantity" : "1 tablespoon"
-      }, {
-        "name" : "Sesame Seeds and Sesame Oil",
-        "quantity" : "Add accordingly based on personal prefrences"
-      }, {
-        "name" : "Chicken Broth",
-        "quantity" : "1 cube"
-      }, {
-        "name" : "White Pepper Powder",
-        "quantity" : "1 teaspoon"
-      }, {
-        "name" : "Ramen Noodle",
-        "quantity" : "1 packet"
-      }, {
-        "name" : "Pork",
-        "quantity" : "200g"
-      } ],
-      "name" : "Miso Ramen",
-      "recipeId" : "001",
-      "stepsList" : [ {
-        "stepDescription" : "In a medium pot, heat sesame oil over medium-low heat and add the minced garlic, ginger, and shallot.",
-        "stepNum" : 1
-      }, {
-        "stepDescription" : "With a wooden spatula, stir fry until fragrant. Add the meat and increase heat to medium. Cook the meat until no longer pink.",
-        "stepNum" : 2
-      }, {
-        "stepDescription" : "Add spicy bean paste (La Doubanjiang) or non-spicy bean paste (Doubanjiang) and miso. Quickly blend well with the meat before they get burnt.",
-        "stepNum" : 3
-      }, {
-        "stepDescription" : "And add the ground sesame seeds and sugar and mix well.",
-        "stepNum" : 4
-      }, {
-        "stepDescription" : "Add chicken stock and bring it to a simmer.",
-        "stepNum" : 5
-      }, {
-        "stepDescription" : "Bring a large pot of unsalted water to a boil. When water is boiling, take some hot water into serving bowls to warm up the bowls (and drain before adding cooked noodles). Loosen up the fresh noodles.",
-        "stepNum" : 6
-      } , {
-        "stepDescription" : "Cook the noodles according to the package instructions. I usually cook the noodles al dente (about 15 seconds earlier than suggested time).",
-        "stepNum" : 7
-      } , {
-        "stepDescription" : "When noodles are done, quickly pick them up with a mesh sieve. You don’t want to dilute your soup, so make sure to drain the water well. Serve the noodles into bowls.",
-        "stepNum" : 8
-      }  , {
-        "stepDescription" : "Add the ramen soup and top with various toppings you’ve prepared and place the toppings.",
-        "stepNum" : 9
-      } ]
+      "ingredientList" : [ 
+        {
+            "name" : "Miso",
+            "quantity" : "1 tablespoon"
+        }, 
+        {
+            "name" : "Chili Bean Paste",
+            "quantity" : "1 tablespoon"
+        }, 
+        {
+            "name" : "Sesame Seeds and Sesame Oil",
+            "quantity" : "Add accordingly based on personal prefrences"
+        }, 
+        {
+            "name" : "Chicken Broth",
+            "quantity" : "1 cube"
+        }, 
+        {
+            "name" : "White Pepper Powder",
+            "quantity" : "1 teaspoon"
+        }, 
+        {
+            "name" : "Ramen Noodle",
+            "quantity" : "1 packet"
+        }, 
+        {
+            "name" : "Pork",
+            "quantity" : "200g"
+        } ],
+      "stepsList" : [ 
+        {
+            "stepDescription" : "In a medium pot, heat sesame oil over medium-low heat and add the minced garlic, ginger, and shallot.",
+            "stepNum" : 1
+        }, 
+        {
+            "stepDescription" : "With a wooden spatula, stir fry until fragrant. Add the meat and increase heat to medium. Cook the meat until no longer pink.",
+            "stepNum" : 2
+        }, 
+        {
+            "stepDescription" : "Add spicy bean paste (La Doubanjiang) or non-spicy bean paste (Doubanjiang) and miso. Quickly blend well with the meat before they get burnt.",
+            "stepNum" : 3
+        }, 
+        {
+            "stepDescription" : "And add the ground sesame seeds and sugar and mix well.",
+            "stepNum" : 4
+        }, 
+        {
+            "stepDescription" : "Add chicken stock and bring it to a simmer.",
+            "stepNum" : 5
+        }, 
+        {
+            "stepDescription" : "Bring a large pot of unsalted water to a boil. When water is boiling, take some hot water into serving bowls to warm up the bowls (and drain before adding cooked noodles). Loosen up the fresh noodles.",
+            "stepNum" : 6
+        }, 
+        {
+            "stepDescription" : "Cook the noodles according to the package instructions. I usually cook the noodles al dente (about 15 seconds earlier than suggested time).",
+            "stepNum" : 7
+        }, 
+        {
+            "stepDescription" : "When noodles are done, quickly pick them up with a mesh sieve. You don’t want to dilute your soup, so make sure to drain the water well. Serve the noodles into bowls.",
+            "stepNum" : 8
+        }, 
+        {
+            "stepDescription" : "Add the ramen soup and top with various toppings you’ve prepared and place the toppings.",
+            "stepNum" : 9
+        } 
+      ]
     },
-    "002" : {
+    {
+      "recipeId" : "002",
+      "name" : "Mapo Tofu",
       "img" : "https://mxrcxsz.github.io/Assignment-1/img/mapo_tofu.jpeg",
       "description" : "A standard burger with cheese and a beef patty.",
-      "ingredientList" : [ {
-        "name" : "Dried red chilies",
-        "quantity" : "8"
-      }, {
-        "name" : "Sichuan Peppercorn",
-        "quantity" : "1 tablespoon"
-      }, {
-        "name" : "Garlic",
-        "quantity" : "3 tablespoon"
-      }, {
-        "name" : "Ground Pork",
-        "quantity" : "200 grams"
-      }, {
-        "name" : "Chicken Broth",
-        "quantity" : "1 cup"
-      }, {
-        "name" : "Silken Tofu",
-        "quantity" : "1 piece"
-      }, {
-        "name" : "Sesame Oil",
-        "quantity" : "1 teaspoon"
-      }, {
-        "name" : "Cornstarch",
-        "quantity" : "1 teaspoon"
-      } ],
-      "name" : "Mapo Tofu",
-      "recipeId" : "002",
-      "stepsList" : [ {
-        "stepDescription" : "First, we toast the chilies. If you have homemade toasted chili oil, you can skip this step. Heat your wok or a small saucepan over low heat. Add ¼ cup of the oil and throw in the fresh and dried peppers. Stir occasionally and heat until fragrant, about 5 minutes, ensuring that the peppers don’t burn. Remove from heat and set aside.",
-        "stepNum" : 1
-      }, {
-        "stepDescription" : "Heat the remaining ¼ cup of oil in your wok over medium heat. Add your ground Sichuan peppercorns and stir occasionally for 30 seconds. After 1 minute, add the garlic. Fry for another minute, and then turn up the heat to high and add the ground pork. Break up the meat and fry it until it’s cooked through.",
-        "stepNum" : 2
-      }, {
-        "stepDescription" : "Add the spicy bean sauce to the mixture and stir it in well. Add 1 cup of chicken broth to the wok and stir. Let this simmer for a minute or so. While that's happening, ready your tofu and also put a ¼ cup of water in a small bowl with your cornstarch and mix until thoroughly combined.",
-        "stepNum" : 3
-      }, {
-        "stepDescription" : "Add the cornstarch mixture to your sauce and stir. Let it bubble away until the sauce starts to thicken. (If it gets too thick, splash in a little more water or chicken stock.)",
-        "stepNum" : 4
-      }, {
-        "stepDescription" : "Then add your chili oil from before—peppers and all! If you are using homemade chili oil, ONLY use the standing oil, as it's likely that you have salted it and you only want the oil, not additional salt. Stir the oil into the sauce, and add the tofu. Use your spatula to gently toss the tofu in the sauce. Let everything cook for 3-5 minutes. Add the sesame oil and sugar (if using) along with the scallions and stir until the scallions are just wilted.",
-        "stepNum" : 5
-      }, {
-        "stepDescription" : "Serve with a last sprinkle of Sichuan peppercorn powder as a garnish if desired.",
-        "stepNum" : 6
-      } ]
+      "ingredientList" : [ 
+        {
+            "name" : "Dried red chilies",
+            "quantity" : "8"
+        }, 
+        {
+            "name" : "Sichuan Peppercorn",
+            "quantity" : "1 tablespoon"
+        }, 
+        {
+            "name" : "Garlic",
+            "quantity" : "3 tablespoon"
+        }, 
+        {
+            "name" : "Ground Pork",
+            "quantity" : "200 grams"
+        }, 
+        {
+            "name" : "Chicken Broth",
+            "quantity" : "1 cup"
+        }, 
+        {
+            "name" : "Silken Tofu",
+            "quantity" : "1 piece"
+        }, 
+        {
+            "name" : "Sesame Oil",
+            "quantity" : "1 teaspoon"
+        }, 
+        {
+            "name" : "Cornstarch",
+            "quantity" : "1 teaspoon"
+        } ],
+      "stepsList" : [ 
+        {
+            "stepDescription" : "First, we toast the chilies. If you have homemade toasted chili oil, you can skip this step. Heat your wok or a small saucepan over low heat. Add ¼ cup of the oil and throw in the fresh and dried peppers. Stir occasionally and heat until fragrant, about 5 minutes, ensuring that the peppers don’t burn. Remove from heat and set aside.",
+            "stepNum" : 1
+        },
+        {
+            "stepDescription" : "Heat the remaining ¼ cup of oil in your wok over medium heat. Add your ground Sichuan peppercorns and stir occasionally for 30 seconds. After 1 minute, add the garlic. Fry for another minute, and then turn up the heat to high and add the ground pork. Break up the meat and fry it until it’s cooked through.",
+            "stepNum" : 2
+        },
+        {
+            "stepDescription" : "Add the spicy bean sauce to the mixture and stir it in well. Add 1 cup of chicken broth to the wok and stir. Let this simmer for a minute or so. While that's happening, ready your tofu and also put a ¼ cup of water in a small bowl with your cornstarch and mix until thoroughly combined.",
+            "stepNum" : 3
+        },
+        {
+            "stepDescription" : "Add the cornstarch mixture to your sauce and stir. Let it bubble away until the sauce starts to thicken. (If it gets too thick, splash in a little more water or chicken stock.)",
+            "stepNum" : 4
+        },
+        {
+            "stepDescription" : "Then add your chili oil from before—peppers and all! If you are using homemade chili oil, ONLY use the standing oil, as it's likely that you have salted it and you only want the oil, not additional salt. Stir the oil into the sauce, and add the tofu. Use your spatula to gently toss the tofu in the sauce. Let everything cook for 3-5 minutes. Add the sesame oil and sugar (if using) along with the scallions and stir until the scallions are just wilted.",
+            "stepNum" : 5
+        },
+        {
+            "stepDescription" : "Serve with a last sprinkle of Sichuan peppercorn powder as a garnish if desired.",
+            "stepNum" : 6
+        } ]
     }
-  }
-}
+]
