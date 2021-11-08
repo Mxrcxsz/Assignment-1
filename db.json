@@ -76,7 +76,7 @@
       "recipeId" : "002",
       "name" : "Mapo Tofu",
       "img" : "https://mxrcxsz.github.io/Assignment-1/img/mapo_tofu.jpeg",
-      "description" : "A standard burger with cheese and a beef patty.",
+      "description" : "Mapo tofu is a popular Chinese dish from Sichuan province. It consists of tofu set in a spicy sauce, typically a thin, oily, and bright red suspension, based on douban and douchi, along with minced meat.",
       "ingredientList" : [ 
         {
             "name" : "Dried red chilies",
