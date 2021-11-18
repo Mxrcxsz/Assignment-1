@@ -5,12 +5,12 @@
       "description":"An 8-ounce serving of our refreshing H+ Sport raspberry mineral water fulfills a day's nutritional requirements for over 12 vitamins and minerals.",
       "price":10,
       "image":"https://mxrcxsz.github.io/Assignment-1/img/togethers.png",
-      "ingredientList" : [ 
+      "nutriList" : [ 
         {
-            "Label information" : "Natural rehydration. Everything you need. Nothing you don’t. An 8-ounce serving fulfills a day’s nutritional requirements for over 12 vitamins and minerals, as proven in independent laboratories tests. Made in the USA with USA-sourced ingredients. No minerals were harmed in the making of this product. Please be kind to the environment and recycle this bottle.",
-            "Ingredients" : "Artesian mineral water, H+ Sport Multi-Vitamin Powder, natural fruit flavor.",
-            "Contains NO" : "Artificial flavors, colors, or preservatives, sugar, salt, soy, dairy, gluten, or yeast.",
-            "Directions" : "As a dietary supplement, drink one cup (8 oz) per day, or as a fluid replacer, drink as needed."
+            "labelinformation" : "Natural rehydration. Everything you need. Nothing you don’t. An 8-ounce serving fulfills a day’s nutritional requirements for over 12 vitamins and minerals, as proven in independent laboratories tests. Made in the USA with USA-sourced ingredients. No minerals were harmed in the making of this product. Please be kind to the environment and recycle this bottle.",
+            "ingredients" : "Artesian mineral water, H+ Sport Multi-Vitamin Powder, natural fruit flavor.",
+            "containsNO" : "Artificial flavors, colors, or preservatives, sugar, salt, soy, dairy, gluten, or yeast.",
+            "directions" : "As a dietary supplement, drink one cup (8 oz) per day, or as a fluid replacer, drink as needed."
         }
        ]
    },
