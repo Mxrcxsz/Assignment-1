@@ -1,0 +1,37 @@
+[
+  { 
+        "id":"440",
+        "name":"Multi-Vitamin (90 capsules)",
+        "description":"A daily dose of our Multi-Vitamins fulfills a day's nutritional needs for over 12 vitamins and minerals.",
+        "price":3,
+        "image":"https://hplussport.com/wp-content/uploads/2016/12/multi-vitamin_600px.png"
+     },
+     { 
+        "id":"471",
+        "name":"Flaxseed Oil 1000 mg (90 capsules)",
+        "description":"Our Flaxseed Oil contains Omegas 3, 6, and 9 for a heart-healthy option without the use of fish oil.",
+        "price":8,
+        "image":"https://hplussport.com/wp-content/uploads/2016/12/flaxseed-oil_600px.png"
+     },
+     { 
+        "id":"472",
+        "name":"Magnesium 250 mg (100 tablets)",
+        "description":"Magnesium is critical to many bodily processes, and supports nerve, muscle, and heart function.",
+        "price":7,
+        "image":"https://hplussport.com/wp-content/uploads/2016/12/magnesium_600px.png"
+     },
+     { 
+        "id":"473",
+        "name":"Iron 65 mg (150 caplets)",
+        "description":"Iron is essential for transporting oxygen in the body and for the formation of red blood cells.",
+        "price":12,
+        "image":"https://hplussport.com/wp-content/uploads/2016/12/iron_600px.png"
+     },
+     { 
+        "id":"474",
+        "name":"Calcium 400 IU (150 tablets)",
+        "description":"Our Calcium supports strong bones and teeth and may help prevent osteoporosis.<strong>\u00c2\u00a0</strong>",
+        "price":12,
+        "image":"https://hplussport.com/wp-content/uploads/2016/12/calcium_600px.png"
+     }
+]
