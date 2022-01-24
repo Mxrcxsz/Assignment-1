@@ -155,9 +155,9 @@
       "description":"Henry Twill, founder and CEO of H+ Sport, teams up with celebrity nutritionist Jill Bayner, CNS, to bring you recipes and tips designed to maximize your athletic performance, while\u00c2\u00a0minimizing your time in the kitchen.",
       "price":8,
       "image":"https://hplussport.com/wp-content/uploads/2016/12/In-the-Kitchen-with-H-book-cover.png",
-      "label":"Natural rehydration. Everything you need. Nothing you don’t. An 8-ounce serving fulfills a day’s nutritional requirements for over 12 vitamins and minerals, as proven in independent laboratories tests. Made in the USA with USA-sourced ingredients. No minerals were harmed in the making of this product. Please be kind to the environment and recycle this bottle.",
-     "ingredient":"Artesian mineral water, H+ Sport Multi-Vitamin Powder, natural fruit flavor.",
-     "contains":"Artificial flavors, colors, or preservatives, sugar, salt, soy, dairy, gluten, or yeast."
+      "label":"Book",
+     "ingredient":"Book",
+     "contains":"Book"
    },
    { 
       "id":"483",
@@ -165,9 +165,9 @@
       "description":"Whether dancing the samba, mastering a yoga pose, or scaling the climbing wall, our stretchy dance pants, made from 80% organic cotton and 20% Lycra, are the most versatile and comfortable workout pants you'll ever have the pleasure of wearing.",
       "price":4,
       "image":"https://hplussport.com/wp-content/uploads/2016/12/stretch-dance-pants_LYNDA_29942.jpg",
-      "label":"",
-     "ingredient":"",
-     "contains":""
+      "label":"Stretchy Dance Pants",
+     "ingredient":"Cotton",
+     "contains":"Cotton"
    },
    { 
       "id":"500",
