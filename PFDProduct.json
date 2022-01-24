@@ -155,9 +155,9 @@
       "description":"Henry Twill, founder and CEO of H+ Sport, teams up with celebrity nutritionist Jill Bayner, CNS, to bring you recipes and tips designed to maximize your athletic performance, while\u00c2\u00a0minimizing your time in the kitchen.",
       "price":8,
       "image":"https://hplussport.com/wp-content/uploads/2016/12/In-the-Kitchen-with-H-book-cover.png",
-      "label":"Book",
-     "ingredient":"Book",
-     "contains":"Book"
+      "label":"",
+     "ingredient":"",
+     "contains":""
    },
    { 
       "id":"483",
@@ -165,9 +165,9 @@
       "description":"Whether dancing the samba, mastering a yoga pose, or scaling the climbing wall, our stretchy dance pants, made from 80% organic cotton and 20% Lycra, are the most versatile and comfortable workout pants you'll ever have the pleasure of wearing.",
       "price":4,
       "image":"https://hplussport.com/wp-content/uploads/2016/12/stretch-dance-pants_LYNDA_29942.jpg",
-      "label":"Stretchy Dance Pants",
-     "ingredient":"Cotton",
-     "contains":"Cotton"
+      "label":"",
+     "ingredient":"",
+     "contains":""
    },
    { 
       "id":"500",
