@@ -93,13 +93,74 @@
     <script>
         // --- POETRY DICTIONARY ---
         const poetryMap = {
-            "worry": "Worry is another form of love. Let it slowly become trust.",
-            "stress": "Like a tight knot, it only needs time and gentle hands to loosen.",
-            "anxious": "This feeling is just a passing cloud across your vast sky.",
-            "sad": "Rain must fall for the earth to bloom. Be gentle with your seasons.",
-            "tired": "Rest is not a weakness; it is the quiet gathering of strength.",
-            "default": "Every heavy thing eventually learns how to float."
-        };
+    // Original entries (enhanced with mindfulness)
+    "worry": "Notice your worry like a cloud passing through the vast sky of your awareness. Watch it drift without grabbing hold. Let it be, let it go. Worry is often love in disguise—breathe and let it transform into gentle trust.",
+    
+    "stress": "Place your hand on your heart. Feel the rise and fall of your breath. Stress is just the body asking for your attention. Three slow breaths can soften the tightest knot. You are safe in this moment.",
+    
+    "anxious": "Anxiety is energy moving through you. Instead of fighting it, invite it in with curiosity. Where do you feel it? Breathe into that space. Like a wave, it will rise and eventually return to the calm ocean beneath.",
+    
+    "sad": "Sadness is a tender visitor. Offer it a seat and listen to what it carries. Like rain feeding the roots beneath the soil, your tears water the parts of you that are growing. All seasons pass.",
+    
+    "tired": "Rest is a form of wisdom. Your body speaks in whispers before it shouts. Lie down, close your eyes, and let the world wait. In stillness, you gather the energy to meet life again.",
+    
+    "default": "Pause. Take one conscious breath. In this moment, nothing is required of you but to be. Every heavy thing eventually learns how to float.",
+    
+    // New entries - Emotions & States
+    "overwhelmed": "When everything feels like too much, return to just one breath. Then another. You don't have to solve everything right now. Break it down into tiny moments. What's the next kind thing you can do for yourself?",
+    
+    "lonely": "Loneliness is longing for connection. Begin by connecting with yourself—place a hand on your heart and breathe. You are your own companion in this moment. Feel the shared humanity in knowing others feel this too.",
+    
+    "angry": "Anger is a fire. It can burn or it can warm. Before speaking or acting, pause. Feel the heat without letting it consume you. Breathe deeply three times. From stillness, respond rather than react.",
+    
+    "hopeless": "Hope isn't always a bright light. Sometimes it's a whisper in the dark, a tiny seed waiting for the right conditions. Hold space for not knowing. Keep breathing. Keep being. Even the smallest movement forward is enough.",
+    
+    "guilty": "Guilt is a teacher, not a life sentence. Acknowledge what happened, learn what you needed to, and practice letting the rest go. You are allowed to grow. You are allowed to begin again.",
+    
+    "frustrated": "Frustration is unmet expectation. Can you soften your grip on how things 'should' be? Take a step back. Breathe. Allow what is to be here for a moment before you decide what to do next.",
+    
+    "empty": "Emptiness is not a void—it is spaciousness. A quiet canvas. Sometimes we need to feel empty before we can be filled again. Rest here. Listen. Something is quietly waiting to emerge.",
+    
+    "scared": "Fear lives in the body before it lives in the mind. Notice where you hold it. Breathe into that space. You don't have to fight fear—just expand the space around it. You are larger than what frightens you.",
+    
+    "hopeful": "Hope is a gentle practice. Nurture it like a small flame. What is one thing, however small, that brought you warmth today? Let that be enough for now.",
+    
+    "confused": "Not knowing is a doorway, not a failure. Sit with the questions without demanding answers. Clarity arrives when the mind has space to breathe. Trust your pace.",
+    
+    "hurt": "Pain is a messenger. Honor what hurts without letting it define you. Like a bruise, healing takes time and tenderness. Wrap yourself in the same compassion you'd offer a dear friend.",
+    
+    "jealous": "Jealousy often points to something we long for in ourselves. Instead of comparison, turn inward. What is this feeling showing you about your own desires? Your path is yours alone—it doesn't need to look like anyone else's.",
+    
+    "ashamed": "Shame whispers you are unworthy. But worth is not earned—it is your birthright. Come back to your breath. Come back to this moment. You belong here, exactly as you are.",
+    
+    "grieving": "Grief is love with nowhere to go. Let it move through you in its own time and shape. There is no right way to grieve, only your way. Honor what was lost by tending to what remains—including yourself.",
+    
+    // Mindfulness practices
+    "breathe": "Inhale slowly for four counts. Hold for four. Exhale for six. Notice how your body softens with each breath. You are practicing presence. This is enough.",
+    
+    "present": "Look around you. Find three things you can see, two you can touch, one you can hear. You are here. You are now. Welcome to the present moment.",
+    
+    "ground": "Feel your feet on the floor. Notice the weight of your body. You are supported. When the mind spins, the body can anchor you. Come back to this physical moment.",
+    
+    "accept": "What you resist persists. What you allow can transform. Can you let this moment be exactly as it is? Not forever—just right now. Acceptance is not giving up; it's making space for what's real.",
+    
+    "release": "Imagine holding a leaf on an open palm. This is your worry. Watch the wind take it. Letting go is not forgetting—it's choosing where you place your precious attention.",
+    
+    "kindness": "Say to yourself silently: 'May I be safe. May I be peaceful. May I be kind to myself. May I accept myself as I am.' This is the practice of loving-kindness. You deserve your own compassion.",
+    
+    // Sleep & Rest
+    "insomnia": "If sleep won't come, let rest be enough. Lying still with soft eyes and slow breath is healing. There is no pressure here. Your body knows what it needs—trust it.",
+    
+    "restless": "Energy wants to move. Stretch gently. Shake out your hands and feet. Let the restlessness flow through you instead of against you. When you're ready, stillness will welcome you back.",
+    
+    // Self-compassion
+    "failure": "You tried. That took courage. Failure is not a reflection of your worth—it's evidence that you're alive, growing, risking. What did this teach you? Let that be the gift.",
+    
+    "insecure": "Insecurity is the mind comparing your inside to someone else's outside. Return to your own ground. What is true about you in this moment? That is enough. You are enough.",
+    
+    "unworthy": "You don't need to earn your place here. Worth is not a reward—it is the recognition that you exist, and that alone matters. Breathe deeply and receive this truth."
+};
+
 
         function getPoetry(word) {
             let key = word.toLowerCase().trim();
