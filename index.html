@@ -1,106 +1,332 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>DROP</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotional Release Mirror</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+    <style>
+        body, html {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            overflow: hidden; background-color: #000;
+        }
+
+        #webcam {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; transform: scaleX(-1); /* Mirror effect */
+            z-index: 1; opacity: 0; transition: opacity 2s ease-in-out;
+        }
+
+        #canvas-container {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
+        }
+
+        #intro-screen {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: white; z-index: 10; display: flex;
+            flex-direction: column; align-items: center; justify-content: center;
+            transition: opacity 1s ease;
+        }
+
+        #intro-screen h1 { font-weight: 300; color: #333; font-size: 2.5rem; margin-bottom: 30px; text-align: center; padding: 0 20px;}
+
+        .input-box {
+            width: 80%; max-width: 500px; padding: 20px; border: 1px solid #ddd;
+            border-radius: 12px; font-size: 1.2rem; color: #666; outline: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: border 0.3s;
+        }
+        .input-box:focus { border: 1px solid #aaa; }
+
+        .release-btn {
+            margin-top: 30px; padding: 12px 40px; border: 1px solid #ccc;
+            border-radius: 30px; background: white; font-size: 1.1rem; color: #555;
+            cursor: pointer; transition: all 0.3s ease;
+        }
+        .release-btn:hover { background: #f9f9f9; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+
+        #poetic-banner {
+            position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 20; background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            padding: 30px 50px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white; font-size: 1.8rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-align: center; opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease; width: 80%; max-width: 800px; line-height: 1.4;
+        }
+
+        #add-more-container {
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            z-index: 5; display: none; opacity: 0.7;
+        }
+
+        #add-more-input {
+            padding: 10px 20px; border-radius: 20px; border: none;
+            background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);
+            color: white; outline: none; text-align: center; font-size: 1rem;
+        }
+        #add-more-input::placeholder { color: rgba(255,255,255,0.7); }
+    </style>
 </head>
 <body>
-    <!-- navigation bar -->
-    <header>
-        <nav>
-            <div id="logo">
-                <a href="index.html"><img src="img/Logo.png" width="150px" height=auto></a>
-            </div>
-            <div id="right-nav">
-                <div id="search">
-                    <img src="img/search.png" width="30px" height=auto>
-                </div>
-                <div class="nav-items"><a href="#">Login</a></div>
-                <div class="nav-items"><a href="shop.html">Shop</a></div>
-                <div class="nav-items"><a id="underline" href="index.html">Home</a></div>
-            </div>
-        </nav>
-    </header>
-    <!-- portion for top content -->
-    <section>
-        <div id="poster">
-            <a href="shop.html" id="wallpaper"></a>
-            <a href="shop.html" id="alt-text">Latest SS21 Collection</a>
-        </div>
-        <div id="mid">
-            <div class="title"><p>Shop Brands</p></div>
-            <div id="dynamic"></div>
-        </div>
-        <div id="ow">
-            <div class="title"><p>Off White™</p></div>
-            <div id="clothes">
-                <div id="ow-left">
-                    <div></div>
-                </div>
-                <div id="ow-right">
-                    <div id="ow-right-top">
-                        <div></div>
-                    </div>
-                    <div id="ow-right-bot">
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="morebtn">
-            <a id="viewmore">View More</a>
-        </div>
-    </section>
+
+    <video id="webcam" autoplay playsinline></video>
+    <canvas id="canvas-container"></canvas>
+
+    <div id="intro-screen">
+        <h1>What is uneasing you right now?</h1>
+        <input type="text" id="main-input" class="input-box" placeholder="Type your feelings here..." autocomplete="off">
+        <button id="release-btn" class="release-btn">release</button>
+    </div>
+
+    <div id="poetic-banner"></div>
+
+    <div id="add-more-container">
+        <input type="text" id="add-more-input" placeholder="+ add another feeling" autocomplete="off">
+    </div>
+
     <script>
-        //dynamic background
-        var cycle = 0; 
-        var allBackgrounds = [ "img/content_2.jpg",  
-                            "img/content_1.jpg",  
-                            "img/content_11.jpg",
-                            "img/content_10.png",
-                            "img/content_6.jpg",]; 
+        // --- POETRY DICTIONARY ---
+        const poetryMap = {
+            "worry": "Worry is another form of love. Let it slowly become trust.",
+            "stress": "Like a tight knot, it only needs time and gentle hands to loosen.",
+            "anxious": "This feeling is just a passing cloud across your vast sky.",
+            "sad": "Rain must fall for the earth to bloom. Be gentle with your seasons.",
+            "tired": "Rest is not a weakness; it is the quiet gathering of strength.",
+            "default": "Every heavy thing eventually learns how to float."
+        };
+
+        function getPoetry(word) {
+            let key = word.toLowerCase().trim();
+            for (let k in poetryMap) { if (key.includes(k)) return poetryMap[k]; }
+            return poetryMap["default"];
+        }
+
+        // --- GLOBAL VARIABLES ---
+        const canvas = document.getElementById('canvas-container');
+        const ctx = canvas.getContext('2d');
+        let width = window.innerWidth, height = window.innerHeight;
+        canvas.width = width; canvas.height = height;
+
+        let bubbles = [];
+        let popAnimations = []; 
+        let fingertips = []; // Stores hand tracking coordinates
+
+        const poeticBanner = document.getElementById('poetic-banner');
+        let bannerTimeout;
+
+        // --- PHYSICS SETUP ---
+        const Engine = Matter.Engine, World = Matter.World, Bodies = Matter.Bodies, 
+              Body = Matter.Body, Mouse = Matter.Mouse, MouseConstraint = Matter.MouseConstraint, Events = Matter.Events;
         
-        setInterval(function() { 
-            if (cycle < 4) { 
-                cycle += 1; 
-                document.getElementById("dynamic").style.backgroundImage = "url('" + allBackgrounds[cycle] + "')"; 
-            } else {  
-                cycle = 0;  
-                document.getElementById("dynamic").style.backgroundImage = "url('" + allBackgrounds[cycle] + "')";
-                cycle += 1; 
+        const engine = Engine.create();
+        engine.world.gravity.y = 0; engine.world.gravity.x = 0; // Zero gravity
+
+        // Invisible Walls
+        const wallOptions = { isStatic: true, render: { visible: false } };
+        World.add(engine.world, [
+            Bodies.rectangle(width/2, -50, width, 100, wallOptions),
+            Bodies.rectangle(width/2, height+50, width, 100, wallOptions),
+            Bodies.rectangle(-50, height/2, 100, height, wallOptions),
+            Bodies.rectangle(width+50, height/2, 100, height, wallOptions)
+        ]);
+
+        // Mouse Drag Setup
+        const mouse = Mouse.create(canvas);
+        const mouseConstraint = MouseConstraint.create(engine, { mouse: mouse, constraint: { stiffness: 0.2, render: { visible: false } } });
+        World.add(engine.world, mouseConstraint);
+
+        // --- CORE POP FUNCTION ---
+        function popBubble(bubbleObj, index) {
+            // 1. Show Poetry
+            poeticBanner.innerText = bubbleObj.poetry;
+            poeticBanner.style.opacity = '1';
+            clearTimeout(bannerTimeout);
+            bannerTimeout = setTimeout(() => { poeticBanner.style.opacity = '0'; }, 5000);
+
+            // 2. Trigger Expanding Ring Animation
+            popAnimations.push({
+                x: bubbleObj.body.position.x,
+                y: bubbleObj.body.position.y,
+                radius: bubbleObj.radius,
+                opacity: 1
+            });
+
+            // 3. Delete from Physics World & Array
+            World.remove(engine.world, bubbleObj.body);
+            bubbles.splice(index, 1);
+        }
+
+        // Mouse Click to Pop
+        Events.on(mouseConstraint, 'mouseup', function(event) {
+            const m = event.mouse;
+            const distanceMoved = Math.sqrt(Math.pow(m.mouseupPosition.x - m.mousedownPosition.x, 2) + Math.pow(m.mouseupPosition.y - m.mousedownPosition.y, 2));
+
+            if (distanceMoved < 5) { // It was a click, not a drag
+                const clickedBodies = Matter.Query.point(engine.world.bodies, m.mouseupPosition);
+                if (clickedBodies.length > 0 && !clickedBodies[0].isStatic) {
+                    const index = bubbles.findIndex(b => b.body === clickedBodies[0]);
+                    if (index > -1) popBubble(bubbles[index], index);
+                }
             }
-        }, 4000); 
+        });
+
+        // --- HAND TRACKING (MediaPipe) ---
+        const video = document.getElementById('webcam');
+        const hands = new Hands({locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`});
+        
+        hands.setOptions({
+            maxNumHands: 2, // Track up to 2 hands
+            modelComplexity: 1,
+            minDetectionConfidence: 0.6,
+            minTrackingConfidence: 0.6
+        });
+
+        hands.onResults((results) => {
+            fingertips = [];
+            if (results.multiHandLandmarks) {
+                for (const landmarks of results.multiHandLandmarks) {
+                    const indexFinger = landmarks[8]; // Landmark 8 is the index finger tip
+                    // Mirror X coordinate because webcam is mirrored
+                    fingertips.push({
+                        x: (1 - indexFinger.x) * width,
+                        y: indexFinger.y * height
+                    });
+                }
+            }
+        });
+
+        const camera = new Camera(video, {
+            onFrame: async () => { await hands.send({image: video}); },
+            width: 640, height: 480
+        });
+        camera.start();
+
+        // --- UI FLOW ---
+        function createBubble(emotionText) {
+            const radius = Math.random() * 20 + 50; 
+            const bubble = Bodies.circle(width / 2, height / 2 + 100, radius, {
+                restitution: 0.9, frictionAir: 0.02, density: 0.001
+            });
+            // Gentle initial push
+            Body.applyForce(bubble, bubble.position, { x: (Math.random() - 0.5) * 0.05, y: (Math.random() - 0.5) * 0.05 });
+            World.add(engine.world, bubble);
+            bubbles.push({ body: bubble, word: emotionText, poetry: getPoetry(emotionText), radius: radius });
+        }
+
+        const introScreen = document.getElementById('intro-screen');
+        const mainInput = document.getElementById('main-input');
+        const addMoreInput = document.getElementById('add-more-input');
+
+        function releaseEmotion(inputElement) {
+            const text = inputElement.value.trim();
+            if (text === '') return;
+            createBubble(text);
+            inputElement.value = '';
+
+            if (introScreen.style.opacity !== '0') {
+                introScreen.style.opacity = '0';
+                setTimeout(() => introScreen.style.display = 'none', 1000);
+                video.style.opacity = '0.5'; 
+                document.getElementById('add-more-container').style.display = 'block';
+            }
+        }
+
+        document.getElementById('release-btn').addEventListener('click', () => releaseEmotion(mainInput));
+        mainInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') releaseEmotion(mainInput); });
+        addMoreInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') releaseEmotion(addMoreInput); });
+
+        // --- RENDER & LOGIC LOOP ---
+        function animate() {
+            Engine.update(engine, 1000 / 60);
+            ctx.clearRect(0, 0, width, height);
+
+            // 1. Hand Tracking Collision Logic
+            for (let i = bubbles.length - 1; i >= 0; i--) {
+                const b = bubbles[i];
+                let popped = false;
+
+                // Check distance to all fingertips
+                for (let j = 0; j < fingertips.length; j++) {
+                    const tip = fingertips[j];
+                    const distance = Math.sqrt(Math.pow(b.body.position.x - tip.x, 2) + Math.pow(b.body.position.y - tip.y, 2));
+                    
+                    if (distance < b.radius) { // Finger touched the bubble!
+                        popBubble(b, i);
+                        popped = true;
+                        break; // Stop checking this bubble
+                    }
+                }
+                if (popped) continue; // Skip drawing if it just popped
+
+                // 2. Natural drift
+                if (Math.random() < 0.1) {
+                    Body.applyForce(b.body, b.body.position, { x: (Math.random() - 0.5) * 0.0005, y: (Math.random() - 0.5) * 0.0005 });
+                }
+
+                // 3. Draw Soap Bubble
+                const pos = b.body.position;
+                const gradient = ctx.createRadialGradient(pos.x - b.radius/3, pos.y - b.radius/3, b.radius/10, pos.x, pos.y, b.radius);
+                gradient.addColorStop(0, 'rgba(255, 255, 255, 0.6)');
+                gradient.addColorStop(0.3, 'rgba(150, 255, 200, 0.2)');
+                gradient.addColorStop(0.8, 'rgba(200, 150, 255, 0.2)');
+                gradient.addColorStop(1, 'rgba(255, 255, 255, 0.4)');
+
+                ctx.beginPath(); ctx.arc(pos.x, pos.y, b.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = gradient; ctx.fill();
+                ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.lineWidth = 1; ctx.stroke();
+
+                // Highlight dot
+                ctx.beginPath(); ctx.arc(pos.x - b.radius/2.5, pos.y - b.radius/2.5, b.radius/8, 0, 2 * Math.PI);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)'; ctx.fill();
+
+                // Text
+                ctx.fillStyle = 'white'; ctx.font = '16px -apple-system, sans-serif';
+                ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+                ctx.shadowColor = 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 4;
+                ctx.fillText(b.word, pos.x, pos.y); ctx.shadowBlur = 0;
+            }
+
+            // 4. Draw Pop Animations
+            for (let i = popAnimations.length - 1; i >= 0; i--) {
+                let p = popAnimations[i];
+                p.radius += 3; // Expand
+                p.opacity -= 0.03; // Fade out
+
+                if (p.opacity <= 0) {
+                    popAnimations.splice(i, 1);
+                    continue;
+                }
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+                ctx.strokeStyle = `rgba(255, 255, 255, ${p.opacity})`;
+                ctx.lineWidth = 3;
+                ctx.stroke();
+            }
+
+            // 5. Draw Fingertip Glow (so user knows where their digital finger is)
+            fingertips.forEach(tip => {
+                ctx.beginPath();
+                ctx.arc(tip.x, tip.y, 10, 0, 2 * Math.PI);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.shadowColor = 'white'; ctx.shadowBlur = 15;
+                ctx.fill(); ctx.shadowBlur = 0;
+            });
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+        
+        window.addEventListener('resize', () => {
+            width = window.innerWidth; height = window.innerHeight;
+            canvas.width = width; canvas.height = height;
+        });
     </script>
-    <!-- footer -->
-    <footer>
-        <form>
-            <p class="header">Contact Us</p>
-            <div id="form_content">
-                <label for="uname"><b>Email</b></label><br>
-                <input type="email" size=55 placeholder="Enter Email" name="email" required><br><br>
-                <label for="topic"><b>Topic</b></label><br>
-                <select id="topic" name="topic">
-                    <option value="general">General</option>
-                    <option value="school">School</option>
-                    <option value="other">Other</option>
-                </select><br><br>
-            
-                <label for="message">Message</label><br>
-                <textarea id="message" style="resize: none;" rows="3" cols="50" placeholder="Enter Message"></textarea>
-                <br><br>
-                <button id="submit" type="submit">Submit Request</button><br>
-                <br>
-            </div>
-        </form>
-        <div id="social">
-            <a href="#"><img src="img/facebook.png" width=50px></a>
-            <a href="#"><img src="img/instagram.png" width=50px></a>
-            <a href="#"><img src="img/twitter.png" width=50px></a>
-        </div>
-    </footer>
 </body>
 </html>
-
-<script defer src="script.js"></script>
