@@ -1,5 +1,5 @@
 **Meditation Website(https://mxrcxsz.github.io/Assignment-1/)** 
-README: EmotiveMirror
+## README: EmotiveMirror
 EmotiveMirror is an interactive, web-based mindfulness experience designed to help users visualize and acknowledge their emotions in real-time. By combining computer vision with fluid physics, the site transforms the webcam feed into a digital "mirror" where emotions manifest as interactive elements.
 
 ## Core Features
