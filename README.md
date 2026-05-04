@@ -1,31 +1,35 @@
-## Website Link 
-**[DROP](https://mxrcxsz.github.io/Assignment-1/)** 
+**Meditation Website(https://mxrcxsz.github.io/Assignment-1/)** 
+README: EmotiveMirror
+EmotiveMirror is an interactive, web-based mindfulness experience designed to help users visualize and acknowledge their emotions in real-time. By combining computer vision with fluid physics, the site transforms the webcam feed into a digital "mirror" where emotions manifest as interactive elements.
 
-Project title
-This is my ID assignment 1 repo
+## Core Features
+Interactive Emotion Bubbles: Floating digital representations of emotions appear on screen, mimicking the way feelings arise and subside in the mind.
 
-Overview
-The main purpose that I wanted my website to be able to fulfil is to be a platform where products can be sold. The product category that I chose was sneakers and apparels. The name of the website is Drop. The website will be easy to use and also have easy to read cues, so as to not let the user be confused as to where they need to click next. 
+Hand-Tracking Engagement: Powered by MediaPipe, the site uses your webcam to track hand movements, allowing you to physically "touch," move, or pop emotion bubbles.
 
-Design
-I design it in a way that is simple and classy. The main color theme will be black and white. I have use different websites for reference, the websites are Goat, Novelship, UnionLA
+Reflective Mirror Interface: A calming, mirrored video feed that encourages a sense of presence and interoceptive awareness.
 
-Features
-The navigation bar will be sticky and always stay on top of the page
-On the home page, it will be showing the latest collections and brands that can be found in the store. There is also a dynamic slideshow that will show the images of all the brands available in the store.
+Minimalist Design: A clean, distraction-free UI focused entirely on the user's current state of being.
 
-Next the shop page, user can navigate to the shop page by clicking the navigation bar on top. The page will be showing all of the products that the store have, splitting into sneakers and apparels.
+## Tech Stack
+Frontend: HTML5, CSS3, JavaScript
 
-Next will be product page, where user navigate here by clicking any of the product shown in the shop page. The user are able to select the size that they want and click the buy now button.
+Hand Tracking: MediaPipe Hands
 
-The footer consist of a contact us form where user can send enquiries to us.
+Backend: Node.js
 
-Technologies used
-HTML, CSS, Javascript
+Database: MongoDB (for storing curated content and user preferences)
 
-Credits
-The photos used in the site are all from google images
-The icons used in the site are all from flaticon.com
+Animation: Canvas API / CSS Transitions
 
-Acknowledgement
-I have the inspiration of this project is from the Goat.com, Novelship.com, unionlosangeles.com
+## Getting Started
+Grant Camera Permissions: The website requires webcam access to enable hand-tracking and the mirror effect.
+
+Observe: Watch as bubbles representing different emotional states begin to populate your "mirror."
+
+Interact: Use your hands to engage with the bubbles—acknowledging their presence before letting them fade away.
+
+## Project Vision
+This project was built to explore the intersection of State Mindfulness and technology. Instead of using a phone as a distraction, EmotiveMirror uses the digital space as a tool for grounding and emotional regulation.
+
+Developed as a project exploring digital mindfulness and interactive web development.
